@@ -1,0 +1,221 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3530), pid=8512, tid=14612
+#
+# JRE version:  (18.0+36) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (18+36-2087, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.vendor=Sun Microsystems Inc. -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages org.testng.remote.RemoteTestNG -serport 60974 -protocol json -d C:\Users\vamsiraji\eclipse-workspace1\com.apitestingframework\test-output C:\Users\VAMSIR~1\AppData\Local\Temp\testng-eclipse-582291120\testng-customsuite.xml
+
+Host: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1706)
+Time: Thu Jun  9 12:36:04 2022 Eastern Daylight Time elapsed time: 0.010464 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f503d48230):  JavaThread "Unknown thread" [_thread_in_vm, id=14612, stack(0x000000efa4e00000,0x000000efa4f00000)]
+
+Stack: [0x000000efa4e00000,0x000000efa4f00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x69804a]
+V  [jvm.dll+0x7f308d]
+V  [jvm.dll+0x7f499e]
+V  [jvm.dll+0x7f5053]
+V  [jvm.dll+0x25ca3f]
+V  [jvm.dll+0x694f99]
+V  [jvm.dll+0x689aca]
+V  [jvm.dll+0x321efb]
+V  [jvm.dll+0x3298d6]
+V  [jvm.dll+0x37e47e]
+V  [jvm.dll+0x37e6af]
+V  [jvm.dll+0x2f9c7a]
+V  [jvm.dll+0x2facdd]
+V  [jvm.dll+0x7c1cc0]
+V  [jvm.dll+0x38b801]
+V  [jvm.dll+0x7a09d3]
+V  [jvm.dll+0x40d6bf]
+V  [jvm.dll+0x40f091]
+C  [jli.dll+0x526b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd158ce550, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001f503db8a70 WorkerThread "GC Thread#0" [stack: 0x000000efa4f00000,0x000000efa5000000] [id=8400]
+  0x000001f503dc9f80 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000efa5000000,0x000000efa5100000] [id=7036]
+  0x000001f503dca970 WorkerThread "G1 Conc#0" [stack: 0x000000efa5100000,0x000000efa5200000] [id=20972]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd150fa217]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001f503d43db0] Heap_lock - owner thread: 0x000001f503d48230
+
+Heap address: 0x0000000701c00000, size: 4068 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000701c00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd154e0489]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.007 Loaded shared library C:\Program Files\Java\jdk-18\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff67bfa0000 - 0x00007ff67bfb0000 	C:\Program Files\Java\jdk-18\bin\javaw.exe
+0x00007ffd5d4f0000 - 0x00007ffd5d6e5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd5c4b0000 - 0x00007ffd5c56d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd5ad00000 - 0x00007ffd5afcd000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd5ac00000 - 0x00007ffd5ad00000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd4e960000 - 0x00007ffd4e978000 	C:\Program Files\Java\jdk-18\bin\jli.dll
+0x00007ffd5c710000 - 0x00007ffd5c7be000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd5bdc0000 - 0x00007ffd5be5e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd5c980000 - 0x00007ffd5ca1c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd5b540000 - 0x00007ffd5b665000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd5c310000 - 0x00007ffd5c4b0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd5b020000 - 0x00007ffd5b042000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd5c2e0000 - 0x00007ffd5c30a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd5b080000 - 0x00007ffd5b18b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd5b2d0000 - 0x00007ffd5b36d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd4e940000 - 0x00007ffd4e95a000 	C:\Program Files\Java\jdk-18\bin\VCRUNTIME140.dll
+0x00007ffd3e0b0000 - 0x00007ffd3e34a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffd47b50000 - 0x00007ffd47b5a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd5d070000 - 0x00007ffd5d0a0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd4a020000 - 0x00007ffd4a02c000 	C:\Program Files\Java\jdk-18\bin\vcruntime140_1.dll
+0x00007ffd29f60000 - 0x00007ffd29fed000 	C:\Program Files\Java\jdk-18\bin\msvcp140.dll
+0x00007ffd14df0000 - 0x00007ffd15a01000 	C:\Program Files\Java\jdk-18\bin\server\jvm.dll
+0x00007ffd5d2a0000 - 0x00007ffd5d2a8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffd47770000 - 0x00007ffd47779000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd4fa60000 - 0x00007ffd4fa87000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd5c570000 - 0x00007ffd5c5db000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd58ce0000 - 0x00007ffd58cf2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd54790000 - 0x00007ffd5479a000 	C:\Program Files\Java\jdk-18\bin\jimage.dll
+0x00007ffd58850000 - 0x00007ffd58a34000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd477a0000 - 0x00007ffd477cc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd5b190000 - 0x00007ffd5b212000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd49dd0000 - 0x00007ffd49df5000 	C:\Program Files\Java\jdk-18\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-18\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-18\bin\server
+
+VM Arguments:
+jvm_args: -Djava.vendor=Sun Microsystems Inc. -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.testng.remote.RemoteTestNG -serport 60974 -protocol json -d C:\Users\vamsiraji\eclipse-workspace1\com.apitestingframework\test-output C:\Users\VAMSIR~1\AppData\Local\Temp\testng-eclipse-582291120\testng-customsuite.xml
+java_class_path (initial): C:\Users\vamsiraji\eclipse\java-2022-03\eclipse\configuration\org.eclipse.osgi\431\0\.cp\lib\testng-remote.jar;C:\Users\vamsiraji\eclipse-workspace1\com.apitestingframework\target\test-classes;C:\Users\vamsiraji\eclipse-workspace1\com.apitestingframework\target\classes;C:\Users\vamsiraji\.m2\repository\io\rest-assured\rest-assured\4.4.0\rest-assured-4.4.0.jar;C:\Users\vamsiraji\.m2\repository\org\codehaus\groovy\groovy\3.0.8\groovy-3.0.8.jar;C:\Users\vamsiraji\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.8\groovy-xml-3.0.8.jar;C:\Users\vamsiraji\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\vamsiraji\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\vamsiraji\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\vamsiraji\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\vamsiraji\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\vamsiraji\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\vamsiraji\.m2\repository\io\rest-assured\json-path\4.4.0\json-path-4.4.0.jar;C:\Users\vamsiraji\.m2\repository\org\codehaus\groovy\groovy-json\3.0.8\groovy-json-3.0.8.jar;C:\Users\vamsiraji\.m2\repository\io\rest-assured\rest-assured-common\4.4.0\rest-assured-common-4.4.0.jar;C:\Users\vamsiraji\.m2\repository\io\rest-assured\xml-path\4.4.0\xml-path-4.4.0.jar;C:\Users\vamsiraji\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\vamsiraji\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\vamsiraji\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\vamsiraji\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\vamsiraji\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\vamsiraji\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.2.2\jackson-databind-2.13.2.2.jar;C:\Users\vamsiraji\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.2\jackson-annotations-2.13.2.jar;C:\Users\vamsiraji\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.2\jackson-core-2.13.2.jar;C:\Users\vamsiraji\.m2\repository\io\rest-assured\json-schema-validator\4.3.0\json-schema-validator-4.3.0.jar;C:\Users\vamsiraji\.m2\repository\com\github\java-json-tools\json-schema-validator\2.2.10\json-schema-validator-2.2.10.jar;C:\Users\vamsiraji\.m2\repository\com\github\java-json-tools\json-schema-core\1.2.10\json-schema-core-1.2.10.jar;C:\Users\vamsiraji\.m2\repository\com\github\java-json-tools\jackson-coreutils\1.9\jackson-coreutils-1.9.jar;C:\Users\vamsiraji\.m2\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;C:\Users\vamsiraji\.m2\repository\com\github\fge\msg-simple\1.1\msg-simple-1.1.jar;C:\Users\vamsiraji\.m2\repository\com\github\fge\btf\1.2\btf-1.2.jar;C:\Users\vamsiraji\.m2\repository\com\github\fge\uri-template\0.9\uri-template-0.9.jar;C:\Users\vamsiraji\.m2\repository\org\mozilla\rhino\1.7.7.1\rhino-1.7.7.1.jar;C:\Users\vamsiraji\.m2\repository\javax\mail\mailapi\1.4.3\mailapi-1.4.3.jar;C:\Users\vamsiraji\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\vamsiraji\.m2\repository\joda-time\joda-time\2.9.7\joda-time-2.9.7.jar;C:\Users\vamsiraji\.m2\repository\com\googlecode\libphonenumber\libphonenumber\8.0.0\libphonenumber-8.0.0.jar;C:\Users\vamsiraji\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.3\jopt-simple-5.0.3.jar;C:\Users\vamsiraji\.m2\repository\org\testng\testng\7.5\testng-7.5.jar;C:\Users\vamsiraji\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar;C:\Users\vamsiraji\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\vamsiraji\.m2\repository\com\beust\jcommander\1.78\jcommander-1.78.jar;C:\Users\vamsiraji\.m2\repository\org\webjars\jquery\3.5.1\jquery-3.5.1.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4265607168                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4265607168                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_121
+JAVA_TOOL_OPTIONS=-Djava.vendor="Sun Microsystems Inc."
+PATH=C:/Program Files/Java/jdk-18/bin/server;C:/Program Files/Java/jdk-18/bin;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\vamsiraji\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\vamsiraji\AppData\Local\Programs\Python\Python36-32\;C:\Users\vamsiraji\AppData\Local\Microsoft\WindowsApps;C:\Users\vamsiraji\.dotnet\tools;C:\Users\vamsiraji\AppData\Local\atom\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.2\bin;;C:\Users\vamsiraji\AppData\Local\Microsoft\WindowsApps;C:\Users\vamsiraji\AppData\Roaming\npm;C:\Program Files\Java\jdk-18\bin;C:\Users\vamsiraji\AppData\Local\Android\Sdk\platforms;C:\Users\vamsiraji\AppData\Local\Android\Sdk\platform-tools;C:\Users\vamsiraji\AppData\Local\Android\Sdk\build-tools;C:\Users\vamsiraji\AppData\Local\Android\Sdk\tools;C:\Users\vamsiraji\AppData\Local\Android\Sdk\tools\bin;C:\Program Files\nodejs;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files\apache-maven-3.8.5\bin;;C:\Users\vamsiraji\Desktop;
+USERNAME=vamsiraji
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1706)
+OS uptime: 8 days 0:27 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9 microcode 0xb4, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 16268M (7410M free)
+TotalPageFile size 20364M (AvailPageFile size 239M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 52M, peak: 308M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (18+36-2087) for windows-amd64 JRE (18+36-2087), built on Feb 15 2022 09:43:11 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.

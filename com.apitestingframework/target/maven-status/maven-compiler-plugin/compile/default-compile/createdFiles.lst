@@ -1,0 +1,10 @@
+com\test\helpers\Resuablemethods.class
+com\test\helpers\Servicehelpers.class
+com\test\pojomodels\Deletepojo.class
+com\test\utility\Utility.class
+com\test\constants\Sourcepaths.class
+com\test\pojomodels\Loginpojo.class
+com\test\pojomodels\UpdatePojo.class
+com\test\pojomodels\CreateUserDatapojo.class
+com\test\pojomodels\Userdatapojo.class
+com\test\constants\Endpoints.class
